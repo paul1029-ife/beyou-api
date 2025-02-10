@@ -1,10 +1,10 @@
 const express = require("express");
 const router = express.Router();
-const goalController = require("../controllers/goal.controller");
-const { requireAuth } = require("../middleware/auth");
+const goalController = require("../controllers/goalController");
+const { requireAuth } = require("@clerk/clerk-sdk-node");
 
-router.get("/users/:userId/goals", requireAuth, goalController.getUserGoals);
-router.post("/users/:userId/goals", requireAuth, goalController.createGoal);
-router.put("/users/:userId/goals/:id", requireAuth, goalController.updateGoal);
+router.get("/goals", requireAuth(), goalController.getUserGoals);
+router.post("/goals", requireAuth(), goalController.createGoal);
+router.put("/goals/:id", requireAuth(), goalController.updateGoal);
 
 module.exports = router;

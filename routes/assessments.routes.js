@@ -5,17 +5,17 @@ const { requireAuth } = require("../middleware/auth");
 
 router.get(
   "/courses/:courseId/assessments",
-  requireAuth,
+  requireAuth(),
   assessmentController.getAssessments
 );
 router.post(
   "/courses/:courseId/assessments",
-  requireAuth,
+  requireAuth(),
   assessmentController.createAssessment
 );
 router.put(
   "/assessments/:id",
-  requireAuth,
+  requireAuth(),
   assessmentController.updateAssessment
 );
 
