@@ -24,7 +24,7 @@ app.use(express.json());
 app.use("/api/v1/users", userRouter);
 app.use("/api", courseRoutes);
 app.use("/api", assessmentRoutes);
-app.use("/api", go alRoutes);
+app.use("/api", goalRoutes);
 app.use("/api", progressRoutes);
 
 // Error handling middleware
