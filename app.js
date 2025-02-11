@@ -12,7 +12,6 @@ const app = express();
 
 //Connect to MONGODB
 mongoose.connect(process.env.MONGODB_URI);
-
 const clerk = new createClerkClient({
   secretKey: process.env.CLERK_SECRET_KEY,
 });
@@ -25,7 +24,7 @@ app.use(express.json());
 app.use("/api/v1/users", userRouter);
 app.use("/api", courseRoutes);
 app.use("/api", assessmentRoutes);
-app.use("/api", goalRoutes);
+app.use("/api", go alRoutes);
 app.use("/api", progressRoutes);
 
 // Error handling middleware
